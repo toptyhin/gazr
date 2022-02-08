@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .menu-btn {
+        @apply py-3 px-6 text-white rounded-full transition duration-300 border-transparent border hover:border-white hover:backdrop-blur-sm;
+    }
+}
