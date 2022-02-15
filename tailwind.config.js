@@ -6,7 +6,11 @@ module.exports = {
         heroBlue: {
           50:'#50C4ED',
           100: '#387ADF'
-        }
+        },
+        heroGray: {
+          50:'#C4C4C4',
+          100: '#DDDDDD'
+        }        
       }
     },
   },

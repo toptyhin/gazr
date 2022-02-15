@@ -3,7 +3,44 @@
 @tailwind utilities;
 
 @layer components {
+    .phone {
+        @apply text-white md:text-black lg:text-white text-base flex-1 text-center md:text-right lg:text-right px-10 md:px-5;
+    }
     .menu-btn {
         @apply py-3 px-6 text-white rounded-full transition duration-300 border-transparent border hover:border-white hover:backdrop-blur-sm;
+    }
+    .mobile-menu {
+        @apply md:hidden absolute top-0 right-0 py-5 bg-yellow-50 text-black h-screen w-0 transition-all duration-500 overflow-hidden;
+    }
+
+    .mobile-menu.active {
+        @apply w-screen
+    }
+    .mobile-menu-item {
+        @apply py-5 px-8 block w-full text-right text-xl;
+        background: linear-gradient(#fefce8, #fefce8), linear-gradient(to right, purple, transparent);
+        border-bottom: 5px solid transparent;
+        background-repeat: no-repeat;
+        background-origin: padding-box, border-box;
+    }
+
+    input.geo {
+        @apply w-full h-[55px] rounded-2xl my-3 px-5 text-xl text-heroGray-50 outline outline-2;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+    .button-block {
+        @apply w-full flex my-3 flex-nowrap;
+    }
+    .btn-block {
+        @apply w-1/3 h-[55px] bg-white transition-all;
+    }
+    .btn-block.left {
+        @apply border-r rounded-l-2xl
+    }
+    .btn-block.right {
+        @apply border-l rounded-r-2xl
+    }    
+    .btn-block.active {
+        @apply bg-orange-500 text-white
     }
 }

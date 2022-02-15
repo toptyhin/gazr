@@ -8,18 +8,44 @@
   </head>
   <body>
     <header class="w-screen absolute">
-      <div class="flex h-[110px]">
-        <div class="flex-1 flex items-center px-10">
-          <img src="assets/inforkom-white-logo.png" alt="Инфорком">
-          <a class="text-white text-base flex-1 text-right px-10" href="tel:+74993918910">+7 (499) 391-89-10</a>
+      <div class="flex w-full h-[60px] md:h-[80px] lg:h-[110px] bg-heroBlue-100 md:bg-white lg:bg-transparent">
+        <div class="flex w-full lg:w-1/2 items-center px-5 lg:px-10">
+          <img class="hidden lg:block" src="assets/inforkom-white-logo.png" alt="Инфорком">
+          <img class="hidden md:block lg:hidden" src="assets/inforkom-black-logo.png" alt="Инфорком">
+          <img class="md:hidden" src="assets/inforkom-logo.png" alt="Инфорком">
+
+          <a class="phone" href="tel:+74993918910">+7 (499) 391-89-10</a>
         </div>
-        <div class="flex-1 flex items-center px-10 justify-around">
+        <div class="hidden lg:flex w-1/2 items-center px-10 justify-around">
           <a class="menu-btn" href="#">Преимущества</a>
           <a class="menu-btn" href="#">Карта АЗС</a>
           <a class="menu-btn" href="#">Бонус</a>
           <a class="menu-btn" href="#">Оформить Online</a>
         </div>
+        <button onclick="toggleMenu()" class="p-2 text-white rounded cursor-pointer md:hidden lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>        
       </div>
+      
+      <div class="mobile-menu">
+        <button onclick="toggleMenu()" class="p-2 text-gray-600 rounded cursor-pointer absolute right-4 top-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path xmlns="http://www.w3.org/2000/svg" class="cls-2" d="M13.41,12l4.3-4.29a1,1,0,1,0-1.42-1.42L12,10.59,7.71,6.29A1,1,0,0,0,6.29,7.71L10.59,12l-4.3,4.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l4.29,4.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z"/>
+          </svg>
+        </button>        
+        <div class="mx-auto w-3/4 h-3/4 flex flex-col justify-center items-center">
+          <a class="mobile-menu-item" href="#">Преимущества</a>
+          <a class="mobile-menu-item" href="#">Карта АЗС</a>
+          <a class="mobile-menu-item" href="#">Бонус</a>
+          <a class="mobile-menu-item" href="#">Оформить Online</a>
+        </div>
+           
+      </div>
+    </div>      
     </header>
     <main class="w-screen">
       <section class="w-full flex h-96">
@@ -30,7 +56,33 @@
           
         </div>        
       </section>
+
+      <section id="calc" class="w-full bg-heroGray-100">
+        <div class="w-full md:w-[688px] mx-auto text-center py-3 px-5">
+          <h3 class="font-normal text-3xl">Топливный калькулятор</h3>
+          <p>Рассчитайте сколько сэкономит топливная карта Инфорком</p>
+          <div class="w-full">
+            <input type="text" class="geo"> 
+            <input type="text" class="geo">
+            <div class="button-block">
+              <button type="button" onclick="btnHandler(this)" class="btn-block left active">ДТ</button>
+              <button type="button" onclick="btnHandler(this)" class="btn-block">БЕНЗИН</button>
+              <button type="button" onclick="btnHandler(this)" class="btn-block right">ГАЗ</button>
+            </div>
+          </div>
+        </div>
+      </section>      
     </main>
     <footer></footer>
+    <script>
+      const toggleMenu = () => document.querySelector('.mobile-menu').classList.toggle('active');
+      const btnHandler = (el) => {
+        document.querySelectorAll('button.btn-block').forEach(b=>{
+          b.classList.remove('active');
+          el == b && el.classList.toggle('active')
+        })
+        
+      };
+    </script>
   </body>
 </html>
