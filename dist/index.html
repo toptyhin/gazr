@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link href="style.css" rel="stylesheet">
+    <!-- <link href="style.css" rel="stylesheet"> -->
     <title></title>
   </head>
   <body>
@@ -69,20 +69,23 @@
               <button type="button" onclick="btnHandler(this)" class="btn-block">БЕНЗИН</button>
               <button type="button" onclick="btnHandler(this)" class="btn-block right">ГАЗ</button>
             </div>
+            <div class="w-full my-6">
+                <div class="calculate-text flex py-12"><span class="calc-title flex-1 text-left">Потребление топлива</span><span class="calc-value"></span></div>
+                <div class="calculate-slider">
+                  <div id="slider1"></div>
+                </div>
+            </div>
+            <div class="w-full my-6">
+              <div class="calculate-text flex py-12"><span class="calc-title flex-1 text-left">Потребление топлива</span><span class="calc-value"></span></div>
+              <div class="calculate-slider">
+                <div id="slider2"></div>
+              </div>
+          </div>            
           </div>
         </div>
       </section>      
     </main>
     <footer></footer>
-    <script>
-      const toggleMenu = () => document.querySelector('.mobile-menu').classList.toggle('active');
-      const btnHandler = (el) => {
-        document.querySelectorAll('button.btn-block').forEach(b=>{
-          b.classList.remove('active');
-          el == b && el.classList.toggle('active')
-        })
-        
-      };
-    </script>
+    <script src="bundle.js"></script>
   </body>
 </html>

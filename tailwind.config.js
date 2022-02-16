@@ -10,6 +10,9 @@ module.exports = {
         heroGray: {
           50:'#C4C4C4',
           100: '#DDDDDD'
+        },
+        heroOrange: {
+          50:'#FBA834',
         }        
       }
     },
