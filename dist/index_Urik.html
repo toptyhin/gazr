@@ -7,18 +7,21 @@
     <title></title>
   </head>
   <body>
-    <header class="w-screen">
-      <div class="flex w-full h-16 md:h-20 lg:h-32 bg-black mb-5">
-        <div class="flex w-full items-center px-5 justify-center">
-          <div class="relative">
-            <img class="w-[150px] md:w-auto lg:w-auto" src="assets/inforkom-white-logo.png" alt="Инфорком">
-            <div class="contactus">
-              <span>Есть вопросы?</span>
-              <a href="tel:+74993918910">+7 (499) 391-89-10</a>
-            </div>
-          </div>
-        </div>
+    <header class="w-screen absolute">
+      <div class="flex w-full h-[60px] md:h-[80px] lg:h-[110px] bg-heroBlue-100 md:bg-white lg:bg-transparent">
+        <div class="flex w-full lg:w-1/2 items-center px-5 lg:px-10">
+          <img class="hidden lg:block" src="assets/inforkom-white-logo.png" alt="Инфорком">
+          <img class="hidden md:block lg:hidden" src="assets/inforkom-black-logo.png" alt="Инфорком">
+          <img class="md:hidden" src="assets/inforkom-logo.png" alt="Инфорком">
 
+          <a class="phone" href="tel:+74993918910">+7 (499) 391-89-10</a>
+        </div>
+        <div class="hidden lg:flex w-1/2 items-center px-10 justify-around">
+          <a class="menu-btn" href="#">Преимущества</a>
+          <a class="menu-btn" href="#">Карта АЗС</a>
+          <a class="menu-btn" href="#">Бонус</a>
+          <a class="menu-btn" href="#">Оформить Online</a>
+        </div>
         <button onclick="toggleMenu()" class="p-2 text-white rounded cursor-pointer md:hidden lg:hidden">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
@@ -26,14 +29,7 @@
           </svg>
         </button>        
       </div>
-        <div class="menu-holder">
-          <div class="menu-list">
-          <a class="menu-btn" href="#">Преимущества</a>
-          <a class="menu-btn" href="#">Карта АЗС</a>
-          <a class="menu-btn" href="#">Бонус</a>
-          <a class="menu-btn" href="#">Оформить Online</a>
-          </div>
-        </div>
+      
       <div class="mobile-menu">
         <button onclick="toggleMenu()" class="p-2 text-gray-600 rounded cursor-pointer absolute right-4 top-5">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
@@ -52,11 +48,11 @@
     </div>      
     </header>
     <main class="w-screen">
-      <section class="w-full h-96">
-        <div class="bg-zenith-150 mx-4 h-full">
+      <section class="w-full flex h-96">
+        <div class="flex-1 flex bg-heroBlue-100">
 
         </div>
-        <!-- <div class="flex-1 flex bg-fixed" style="background-image: url(assets/bg3.webp)"> -->
+        <div class="flex-1 flex bg-fixed" style="background-image: url(assets/bg3.webp)">
           
         </div>        
       </section>

@@ -3,6 +3,19 @@
 @tailwind utilities;
 
 @layer components {
+    .contactus {
+      @apply hidden md:flex lg:flex text-white absolute top-0 flex-col items-center;
+    }
+    .menu-holder {
+      @apply hidden md:flex lg:flex w-full h-16 items-center px-10 justify-center;
+      z-index: 1;
+      position: absolute;
+      top: 105px;      
+    }
+    .menu-list {
+      @apply bg-zenith-100 h-full px-5 rounded-full flex items-center justify-center;
+    }
+
     .phone {
         @apply text-white md:text-black lg:text-white text-base flex-1 text-center md:text-right lg:text-right px-10 md:px-5;
     }
@@ -44,6 +57,11 @@
         @apply bg-orange-500 text-white
     }
   
+}
+@media (min-width: 1024px) {
+  .contactus {
+    right: -300px;
+  }
 }
 
 .noUi-target,.noUi-target *{-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;-ms-touch-action:none;touch-action:none;-ms-user-select:none;-moz-user-select:none;user-select:none;-moz-box-sizing:border-box;box-sizing:border-box}

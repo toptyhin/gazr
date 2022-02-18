@@ -13,6 +13,12 @@ module.exports = {
         },
         heroOrange: {
           50:'#FBA834',
+        },
+        zenith: {
+          10: '#88e7ed',
+          100: '#00abc9',
+          150: '#4eb7cd',
+          200: '#2491ae',
         }        
       }
     },
