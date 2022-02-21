@@ -13,7 +13,18 @@
       top: 105px;      
     }
     .menu-list {
-      @apply bg-zenith-100 h-full px-5 rounded-full flex items-center justify-center;
+      @apply bg-zenith-100 h-full w-3/4 px-5 rounded-full flex items-center justify-center;
+      box-shadow: 0 1px 5px rgb(0 0 0 / 37%);
+    }
+
+    .first {
+      @apply mx-4 p-10 text-center;
+      background: radial-gradient(#88e7ed, #4eb7cd 80%);
+      height: 500px;
+    }
+
+    .first-order {
+      margin-top: -30px;
     }
 
     .phone {
@@ -41,6 +52,18 @@
         @apply w-full h-[55px] rounded-2xl my-3 px-5 text-xl text-heroGray-50 outline outline-2;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
+    input.discount-form {
+      @apply w-full h-full rounded-2xl px-5 pr-8 text-xl outline-white outline outline-2 bg-transparent text-zenith-blue;
+    }
+    input.discount-form::placeholder {
+      @apply text-zenith-blue relative;
+    }
+    .input-wrap {
+      @apply w-3/4 h-[55px] mx-auto my-3 relative 
+      after:content-[''] after:block after:w-5 after:h-5 after:absolute after:top-4 after:right-8 after:rotate-45  after:border-white after:border-t-2 after:border-r-2;
+      /* before:content-[''] before:block before:w-6 before:h-6 before:bg-red-300 before:absolute before:top-5 before:right-5 before:rotate-90; */
+    }
+
     .button-block {
         @apply w-full flex my-3 flex-nowrap;
     }
