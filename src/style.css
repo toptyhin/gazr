@@ -2,12 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Open Sans', system-ui, sans-serif;
+  }
+}
+
 @layer components {
     .contactus {
       @apply hidden md:flex lg:flex text-white absolute top-0 flex-col items-center;
     }
     .menu-holder {
-      @apply hidden md:flex lg:flex w-full h-16 items-center px-10 justify-center;
+      @apply hidden md:flex lg:flex w-full h-16 items-center px-32 justify-center;
       z-index: 1;
       position: absolute;
       top: 105px;      
@@ -19,12 +27,13 @@
 
     .first {
       @apply mx-4 p-10 text-center;
-      background: radial-gradient(#88e7ed, #4eb7cd 80%);
-      height: 500px;
+      background: radial-gradient(#9df9ff 40%, #4eb7cd 80%);
+      height: 440px;
     }
 
     .first-order {
-      margin-top: -30px;
+      margin-top: -40px;
+      background: linear-gradient(#4eb7cd, #88e7ed 80%);
     }
 
     .phone {
@@ -64,6 +73,10 @@
       /* before:content-[''] before:block before:w-6 before:h-6 before:bg-red-300 before:absolute before:top-5 before:right-5 before:rotate-90; */
     }
 
+    .btn-default {
+      @apply h-[48px] bg-zenith-blue text-white text-sm transition-all py-3 px-6 rounded-full w-fit;
+    }
+
     .button-block {
         @apply w-full flex my-3 flex-nowrap;
     }
@@ -79,6 +92,48 @@
     .btn-block.active {
         @apply bg-orange-500 text-white
     }
+
+    .advantages {
+      @apply w-1/2 grid grid-rows-2 grid-flow-col p-4 gap-1;
+    }
+    .advantages span {
+      @apply col-span-2 pl-2;
+    }
+    .advantages span.thin {
+      @apply font-thin tracking-widest text-gray-800;
+    }
+    .advantages span.fat {
+      @apply text-lg font-bold;
+    }
+    .advantages img {
+      @apply row-span-3;
+      place-self: center;
+    }
+    .mapmask {
+      @apply flex-1 flex items-center text-center;
+      background-color: #616161ab;
+    }
+
+    .calc_milestone {
+      @apply w-full rounded-full h-14 p-4 pl-10 text-white mb-4 font-bold;
+    }
+    .calc_milestone_text {
+      @apply w-full  p-4 mb-4;
+    }
+
+    .service-bg {
+      @apply absolute w-full h-full left-0 top-0 right-0 bottom-0 flex items-center justify-center text-gray-400 opacity-10 overflow-hidden;
+      font-size: 500px;
+    }
+    .p_bar {
+      @apply my-5 py-2;
+    }
+    .p_bar label {
+      @apply font-bold;
+    }
+    .p_bar>div {
+      @apply my-3
+    }
   
 }
 @media (min-width: 1024px) {
@@ -86,6 +141,8 @@
     right: -300px;
   }
 }
+
+.blue-filter {filter: sepia(100%) hue-rotate(190deg) saturate(500%);}
 
 .noUi-target,.noUi-target *{-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;-ms-touch-action:none;touch-action:none;-ms-user-select:none;-moz-user-select:none;user-select:none;-moz-box-sizing:border-box;box-sizing:border-box}
 .noUi-target{position:relative}

@@ -1,5 +1,5 @@
 import './style.css';
-import debounce from 'lodash/debounce'
+// import debounce from 'lodash/debounce'
 import noUiSlider from 'nouislider'
 
 window.toggleMenu = () => document.querySelector('.mobile-menu').classList.toggle('active');
