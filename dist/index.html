@@ -54,41 +54,46 @@
     </header>
     <main class="w-screen">
       <section class="w-full">
-        <div class="first">
-            <div class="w-3/4 mx-auto flex relative justify-end">
-              <img class="absolute left-0 top-0" src="assets/colonka.webp">
-              <div class="w-3/4">
+          <div class="first">
+            <div class="w-full md:w-3/4 lg:w-3/4 mx-auto flex flex-col md:flex-row lg:flex-row relative justify-end">
+              <img class="md:absolute lg:absolute left-0 top-0" src="assets/colonka.webp">
+              <div class="w-full md:w-3/4 lg:w-3/4">
                 <span class="text-white text-3xl my-6 block">Получи в один клик</span>
-                <span class="text-white text-4xl my-6 block font-bold tracking-tighter">Скидка в 1 руб. на АЗС <span class="text-zenith-blue">"ГАЗПРОМ"</span></span>
-                <div class="input-wrap">
+                <span class="text-white text-3xl md:text-4xl lg:text-4xl  my-6 block font-bold tracking-tighter">Скидка в 1 руб. на АЗС <span class="text-zenith-blue">"ГАЗПРОМ"</span></span>
+                <div class="pb-5">
+                  <a class="text-white text-4xl md:text-6xl lg:text-6xl font-extrabold" href="tel:+74993918910">+7 (499) 391-89-10</a>
+                </div>
+                <!-- <div class="input-wrap">
                   <input type="text" class="discount-form" placeholder="Ваш email">
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="first-order">
+              <div class="card_block">
+                <div class="w-full md:w-1/3 lg:w-1/3 md:h-3/4 lg:h-3/4 px-2 md:px-10 lg:px-10 flex flex-col">
+                  <span class="text-2xl font-extrabold mb-4 block">Топливная карта Инфорком</span>
+                  <p class="my-4 block text-lg">Топливная карта для успешного бизнеса, все бренды без коммиссий и сборов</p>
+                  <p class="my-4 block text-lg">460 Брендов АЗС в том числе Татнефть, Роснефть, Нефтьмагистраль</p>
+                  <button type="button" class="btn-default mt-auto">ЗАКАЗАТЬ</button>
+                </div>
+                <div class="card_image">
+                  <img class="absolute left-0 top-4 md:top-0 lg:top-0" src="assets/card.webp">
                 </div>
               </div>
-            </div>
-        </div>
-        <div class="first-order w-3/4 mx-auto h-96 bg-zenith-150">
-            <div class="w-full h-full px-5 flex flex-1 items-center justify-around">
-              <div class="w-1/3 h-3/4 px-10 flex flex-col">
-                <span class="text-2xl font-extrabold mb-4 block">Топливная карта Инфорком</span>
-                <p class="my-4 block text-lg">Топливная карта для успешного бизнеса, все бренды без коммиссий и сборов</p>
-                <button type="button" class="btn-default mt-auto">ЗАКАЗАТЬ</button>
-              </div>
-              <div class="relative w-1/3 h-1/2">
-                <img class="absolute left-0 top-0" src="assets/card.webp">
-              </div>
-            </div>
-        </div>        
-        <!-- <div class="flex-1 flex bg-fixed" style="background-image: url(assets/bg3.webp)"> -->
-          
-        </div>        
+          </div>   
+        
+         
+        <!-- </div>         -->
       </section>
-      <section class="w-full flex h-[500px] mt-10">
-        <div class="flex w-1/3 items-center grayscale opacity-25">
-          <img src="assets/track.webp" />
+
+      <section class="w-full flex h-[500px] mt-10 flex-col md:flex-row lg:flex-row">
+        <div class="flex w-full md:w-1/3 lg:w-1/3 items-center grayscale opacity-25 relative">
+          <img class="absolute md:block lg:block bottom-0 left-0" src="assets/track.webp" />
         </div>
-        <div class="flex flex-col w-1/3">
+        <div class="flex flex-col w-full md:w-1/3 lg:w-1/3 order-first md:order-none lg:order-none">
           <div class="pl-16">
-            <span class="text-3xl font-extrabold">Только топливо, <br> без коммисий и сборов</span>
+            <span class="text-2xl md:text-3xl lg:text-3xl font-extrabold">Только топливо, <br> без коммисий и сборов</span>
           </div>
           <div class="flex flex-wrap">
             <div class="advantages">
@@ -113,7 +118,7 @@
             </div>            
           </div>
         </div>
-        <div class="">
+        <div class="hidden md:block lg:block">
           <img src="assets/tarif_boxed.webp" />
         </div>
       </section>
@@ -149,7 +154,7 @@
         </div>
       </section>
 
-      <section class="w-full flex flex-wrap mt-10 mb-20 relative">
+      <section class="w-full flex flex-wrap mt-10 mb-20 relative" style="display:none">
         <div class="service-bg">СЕРВИС</div>
         <div class="w-full mb-20">
           <div class="w-full text-center text-lg text-gray-700">Инфорком технический центр</div>
@@ -225,7 +230,7 @@
         <div class="w-1/3 text-center flex items-center">
           <img class="ml-auto" src="assets/inforkom-white-logo.png" />
         </div>
-        <div class="w-1/3 flex items-center justify-center text-white text-2xl font-extrabold">Оформите подписку на акции</div>
+        <div class="w-1/3 flex items-center justify-center text-white text-2xl font-extrabold">Остались вопросы? Звоните</div>
         <div class="w-1/3 flex items-center justify-start">
           <button class="btn-default bg-white text-black font-bold">ПОДПИСАТЬСЯ</button>
         </div>
