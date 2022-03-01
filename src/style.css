@@ -57,7 +57,7 @@
         @apply py-3 px-6 text-white rounded-full transition duration-300 border-transparent border hover:border-white hover:backdrop-blur-sm;
     }
     .mobile-menu {
-        @apply md:hidden absolute z-10 top-0 right-0 py-5 bg-yellow-50 text-black h-screen w-0 transition-all duration-500 overflow-hidden;
+        @apply md:hidden fixed z-10 top-0 right-0 py-5 bg-zenith-blue text-white h-screen w-0 transition-all duration-500 overflow-hidden;
     }
 
     .mobile-menu.active {
@@ -65,7 +65,7 @@
     }
     .mobile-menu-item {
         @apply py-5 px-8 block w-full text-right text-xl;
-        background: linear-gradient(#fefce8, #fefce8), linear-gradient(to right, purple, transparent);
+        background: linear-gradient(#0018ae, #0018ae), linear-gradient(to right, purple, transparent);
         border-bottom: 5px solid transparent;
         background-repeat: no-repeat;
         background-origin: padding-box, border-box;
@@ -107,7 +107,7 @@
     }
 
     .advantages {
-      @apply w-1/2 grid grid-rows-2 grid-flow-col p-4 gap-1;
+      @apply w-full md:w-1/2 lg:w-1/2 grid grid-rows-2 grid-flow-col p-2 md:p-4 lg:p-4 gap-1;
     }
     .advantages span {
       @apply col-span-2 pl-2;
