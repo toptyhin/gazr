@@ -1,6 +1,6 @@
 import './style.css';
-// import debounce from 'lodash/debounce'
-import noUiSlider from 'nouislider'
+import noUiSlider from 'nouislider';
+import gmapsInitialize from './map';
 
 window.toggleMenu = () => document.querySelector('.mobile-menu').classList.toggle('active');
 window.btnHandler = (el) => {
@@ -11,7 +11,38 @@ window.btnHandler = (el) => {
     
   };
 
+window.menuItemHandler = (el) => {
+    console.log(el);
+    if (el.dataset.target) {
+        const target = document.getElementById(el.dataset.target);
+        if (target) {
+            const rect = target.getBoundingClientRect();
+            toggleMenu();
+            console.log(rect.y);
+            window.scrollTo({
+                top: rect.y-60,
+                behavior: 'smooth'
+            })
+        
+        }
+    }
+}
 
+window.showMap = () => {
+    let holder = document.getElementById('map_canvas_holder');
+    if (!holder) {
+        holder = document.createElement('section');
+        holder.id = 'map_canvas_holder';
+        document.querySelector('main').appendChild(holder)
+        const map = document.createElement('div');
+        map.id = 'map_canvas';
+        document.querySelector('#map_canvas_holder').appendChild(map)
+    } else {
+        holder.classList.add('active');
+    }
+    gmapsInitialize();    
+    setTimeout(()=>holder.classList.add('active'),500)
+}
 
   const slider1 = document.getElementById('slider1');
   const slider2 = document.getElementById('slider2');
@@ -86,3 +117,7 @@ slider2.noUiSlider.on('update', (val)=>{
     setPassedLabels(slider2, val)
     displayValue(slider2, val)
 });
+
+
+
+

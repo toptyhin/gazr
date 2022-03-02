@@ -36,16 +36,16 @@
           </div>
         </div>
       <div class="mobile-menu">
-        <button onclick="toggleMenu()" class="p-2 text-gray-600 rounded cursor-pointer absolute right-4 top-5">
+        <button onclick="toggleMenu()" class="p-2 text-white rounded cursor-pointer absolute right-4 top-5">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
             stroke="currentColor">
             <path xmlns="http://www.w3.org/2000/svg" class="cls-2" d="M13.41,12l4.3-4.29a1,1,0,1,0-1.42-1.42L12,10.59,7.71,6.29A1,1,0,0,0,6.29,7.71L10.59,12l-4.3,4.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l4.29,4.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z"/>
           </svg>
         </button>        
         <div class="mx-auto w-3/4 h-3/4 flex flex-col justify-center items-center">
-          <a class="mobile-menu-item" href="#">Преимущества</a>
-          <a class="mobile-menu-item" href="#">Карта АЗС</a>
-          <a class="mobile-menu-item" href="#">Бонус</a>
+          <button class="mobile-menu-item" role="button" data-target="features" onclick="menuItemHandler(this)">Преимущества</button>
+          <button class="mobile-menu-item" role="button" data-target="map" onclick="menuItemHandler(this)">Карта АЗС</button>
+          <button class="mobile-menu-item" role="button" data-target="calc" onclick="menuItemHandler(this)">Расчитать скидку</button>
           <a class="mobile-menu-item" href="#">Оформить Online</a>
         </div>
            
@@ -59,9 +59,9 @@
               <img class="md:absolute lg:absolute left-0 top-0" src="assets/colonka.webp">
               <div class="w-full md:w-3/4 lg:w-3/4">
                 <span class="text-white text-3xl my-6 block">Получи в один клик</span>
-                <span class="text-white text-3xl md:text-4xl lg:text-4xl  my-6 block font-bold tracking-tighter">Скидка в 1 руб. на АЗС <span class="text-zenith-blue">"ГАЗПРОМ"</span></span>
+                <span class="text-white text-3xl md:text-4xl lg:text-4xl  my-6 block font-bold leading-relaxed tracking-tighter">Скидка в 1 руб. на АЗС <span class="text-zenith-blue">"ГАЗПРОМ"</span></span>
                 <div class="pb-5">
-                  <a class="text-white text-4xl md:text-6xl lg:text-6xl font-extrabold" href="tel:+74993918910">+7 (499) 391-89-10</a>
+                  <a class="text-white text-2xl md:text-6xl lg:text-6xl font-extrabold" href="tel:+74993918910">+7 (499) 391-89-10</a>
                 </div>
                 <!-- <div class="input-wrap">
                   <input type="text" class="discount-form" placeholder="Ваш email">
@@ -75,7 +75,7 @@
                   <span class="text-2xl font-extrabold mb-4 block">Топливная карта Инфорком</span>
                   <p class="my-4 block text-lg">Топливная карта для успешного бизнеса, все бренды без коммиссий и сборов</p>
                   <p class="my-4 block text-lg">460 Брендов АЗС в том числе Татнефть, Роснефть, Нефтьмагистраль</p>
-                  <button type="button" class="btn-default mt-auto">ЗАКАЗАТЬ</button>
+                  <button type="button" class="btn-default w-full md:w-min lg:w-min mt-auto">ЗАКАЗАТЬ</button>
                 </div>
                 <div class="card_image">
                   <img class="absolute left-0 top-4 md:top-0 lg:top-0" src="assets/card.webp">
@@ -87,7 +87,7 @@
         <!-- </div>         -->
       </section>
 
-      <section class="w-full flex md:h-[500px] lg:h-[500px] mt-10 flex-col md:flex-row lg:flex-row">
+      <section id="features" class="w-full flex md:h-[500px] lg:h-[500px] mt-10 flex-col md:flex-row lg:flex-row">
         <div class="flex w-full md:w-1/3 lg:w-1/3 items-center grayscale opacity-25 relative">
           <img class="absolute md:block lg:block bottom-0 left-0" src="assets/track.webp" />
         </div>
@@ -123,33 +123,34 @@
         </div>
       </section>
 
-      <section class="w-full flex h-[500px] mt-10 bg-fixed bg-cover" style="background-image: url(assets/map.webp);">
-        <div class="mapmask">
+      <section id="map" class="w-full flex h-[500px] mt-10 bg-fixed bg-cover" style="background-image: url(assets/map.webp);">
+        <div class="mapmask" onclick="showMap()">
           <!-- <img src="assets/play.svg" /> -->
-          <!-- <svg xmlns:dc="http://purl.org/dc/elements/1.1/">
+          <svg xmlns:dc="http://purl.org/dc/elements/1.1/">
             <path fill="white"
                d="M 89.3125,0 C 39.86187,0 0,39.86187 0,89.3125 0,138.76314 39.86187,179 89.3125,179 138.76315,179 179.37495,138.76314 179.37495,89.3125 179.37495,39.86187 138.76315,0 89.3125,0 z m 0,11.46875 c 42.91753,0 77.84375,34.92619 77.84375,77.84375 0,42.91756 -34.92622,77.8438 -77.84375,77.8437 -42.91754,0 -77.84375,-34.92614 -77.84375,-77.8437 0,-42.91756 34.92621,-77.84375 77.84375,-77.84375 z m -32.09375,22.25 0,111.21875 95.9688,-55.625 -95.9688,-55.59375 z"
                id="path3" />
-          </svg> -->
+          </svg>
           <div class="flex flex-col w-1/2 mx-auto">
             <span class="text-white text-4xl font-extrabold">Сеть АЗС</span>
             <span class="text-white text-lg pt-4">Shell, Татнефть, Сургутнефтегаз, Ека, Газпром, Нефтьмагистраль, Ирбис +400 партнеров</span>
           </div>
         </div>
       </section>
-      <section class="w-full flex  mt-10">
-        <div class="w-1/2 m-auto">
-          <div class="m-auto w-1/2">
+
+      <section id="calc" class="w-full flex flex-col md:flex-row lg:flex-row mt-10 p-2 md:p-0 lg:p-0">
+        <div class="w-full md:w-1/2 lg:w-1/2 mb-5 md:m-auto lg:m-auto">
+          <div class="m-auto w-full md:w-1/2 lg:w-1/2">
           <div class="calc_milestone bg-blue-700">Ваш автопарк</div>
           <div class="calc_milestone_text">Рассчитайте сколько сэкономит топливная карта ИНФОРКОМ</div>
           <div class="calc_milestone bg-gray-400">Регион перевозок</div>
           <div class="calc_milestone bg-gray-400">Еще регион перевозок</div>
           <div class="calc_milestone bg-gray-400">Вид топлива</div>
-          <button class="btn-default bg-gray-700" type="button">Расчитать</button>
+          <button class="btn-default w-full bg-gray-700" type="button">Расчитать</button>
           </div>
 
         </div>
-        <div class="w-1/2">
+        <div class="w-full md:w-1/2 lg:w-1/2 order-first">
           <img class="m-auto" src="assets/calc.webp" alt="">
         </div>
       </section>
@@ -230,9 +231,9 @@
         <div class="w-full md:w-1/3 lg:w-1/3 text-center flex items-center">
           <img class="py-4 md:p-0 lg:p-0 mx-auto md:ml-auto lg:ml-auto" src="assets/inforkom-white-logo.png" />
         </div>
-        <div class="w-full md:w-1/3 lg:w-1/3 flex items-center justify-center text-white text-2xl font-extrabold">Остались вопросы? Звоните</div>
+        <div class="w-full md:w-1/3 lg:w-1/3 flex items-center justify-center text-white text-lg md:text-2xl lg:text-2xl font-extrabold">Остались вопросы? Звоните</div>
         <div class="w-full md:w-1/3 lg:w-1/3 py-4 md:p-0 lg:p-0 flex items-center justify-center md:justify-start lg:justify-start">
-          <button class="btn-default bg-white text-black font-bold">ПОДПИСАТЬСЯ</button>
+          <button class="btn-default bg-white text-black font-bold">Позвонить</button>
         </div>
       </section>
 
@@ -264,8 +265,13 @@
           </div>
         </div>
       </section>      
+      <!-- <section id="map_canvas_holder">
+
+      </section> -->
     </main>
     <footer></footer>
+    <script src="/assets/clusterer.js?v=3" type="text/javascript"></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyAyeY8NeF64Ea4GrAgG1EUE_e1L1Ag40EU&language=ru-RU&libraries=places" type="text/javascript"></script>
     <script src="bundle.js"></script>
   </body>
 </html>

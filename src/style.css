@@ -65,7 +65,7 @@
     }
     .mobile-menu-item {
         @apply py-5 px-8 block w-full text-right text-xl;
-        background: linear-gradient(#0018ae, #0018ae), linear-gradient(to right, purple, transparent);
+        background: linear-gradient(#0018ae, #0018ae), linear-gradient(to right, #f27d09 50%, purple);
         border-bottom: 5px solid transparent;
         background-repeat: no-repeat;
         background-origin: padding-box, border-box;
@@ -128,10 +128,10 @@
     }
 
     .calc_milestone {
-      @apply w-full rounded-full h-14 p-4 pl-10 text-white mb-4 font-bold;
+      @apply hidden md:block lg:block w-full rounded-full h-14 p-4 pl-10 text-white mb-4 font-bold;
     }
     .calc_milestone_text {
-      @apply w-full  p-4 mb-4;
+      @apply w-full  p-4 mb-4 text-center md:text-left lg:text-left text-lg md:text-base lg:text-base text-gray-700 font-extrabold md:font-normal lg:font-normal;
     }
 
     .service-bg {
@@ -155,6 +155,18 @@
 
     .card_image {
       @apply relative w-full md:w-1/3 lg:w-1/3 h-[235px] lg:h-1/2 md:h-1/2 order-first md:order-last lg:order-last;
+    }
+
+    #map_canvas_holder {
+      @apply w-full transition-all fixed top-0 left-0 bottom-0 translate-x-full flex;
+    }
+
+    #map_canvas {
+      @apply flex-1 
+    }
+
+    #map_canvas_holder.active {
+      @apply translate-x-0
     }
   
 }
