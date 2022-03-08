@@ -6,8 +6,9 @@ let mm;
 
 function createFullscreenButton() {
     const controlDiv = document.createElement('div');
-    // controlDiv.style.display = 'block';
-    // controlDiv.style.padding = '10px';
+    controlDiv.style.position = 'absolute';
+    controlDiv.style.right = '20px';
+    controlDiv.style.top = '20px';
     const button = document.createElement('a');
         button.id = 'a-fullscreen';
         button.classList.add('btn-default');
@@ -16,7 +17,8 @@ function createFullscreenButton() {
             toggleFullscreen.call(this);
         };
         controlDiv.appendChild(button);
-    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv);
+        document.getElementById('map_canvas').appendChild(controlDiv)
+        // map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv);
 }
 
 function toggleFullscreen() {

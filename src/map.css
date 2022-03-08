@@ -25,6 +25,16 @@ margin: 16px 5px;
     height:32px;
 }
 
+#a-fullscreen {
+    background: #f17e3b;
+    padding: 10px 14px;
+    line-height: 0;
+    margin: 0;
+    top: 50px;
+    width: 48px;
+    box-shadow: 0 0 5px #b4b4b4;    
+}
+
 @font-face {
 font-family: 'inforcomic';
 src:
