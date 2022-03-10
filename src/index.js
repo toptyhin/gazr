@@ -1,6 +1,7 @@
 import './style.css';
 import noUiSlider from 'nouislider';
 import gmapsInitialize from './map';
+import * as echarts from 'echarts';
 
 window.toggleMenu = () => document.querySelector('.mobile-menu').classList.toggle('active');
 window.btnHandler = (el) => {
@@ -41,7 +42,10 @@ window.showMap = () => {
         holder.classList.add('active');
     }
     gmapsInitialize();    
-    setTimeout(()=>holder.classList.add('active'),500)
+    setTimeout(()=>{
+        holder.classList.add('active');
+        document.body.style.overflow='hidden';
+    },500)
 }
 
   const slider1 = document.getElementById('slider1');
@@ -118,6 +122,51 @@ slider2.noUiSlider.on('update', (val)=>{
     displayValue(slider2, val)
 });
 
+const chartDom = document.getElementById('charts');
+const economyChart = echarts.init(chartDom);
+let option = {
+  tooltip: {
+    trigger: 'item'
+  },
+  legend: {
+    top: '5%',
+    left: 'center'
+  },
+  series: [
+    {
+      name: 'Экономия на топливе',
+      type: 'pie',
+      radius: ['40%', '70%'],
+      avoidLabelOverlap: false,
+      itemStyle: {
+        borderRadius: [0,10,0,10],
+        borderColor: '#fff',
+        borderWidth: 2
+      },
+      label: {
+        show: false,
+        position: 'center'
+      },
+      emphasis: {
+        label: {
+          show: true,
+          fontSize: '40',
+          fontWeight: 'bold'
+        }
+      },
+      labelLine: {
+        show: false
+      },
+      data: [
+        { value: 192550, name: 'Расходы на топливо р/мес' },
+        { value: 12566, name: 'НДС' },
+        { value: 3500, name: 'Скидка на топливо' },
+        { value: 500, name: 'Управление картой' },
+      ]
+    }
+  ]
+};
 
+option && economyChart.setOption(option);
 
 

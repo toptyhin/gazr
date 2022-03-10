@@ -24,6 +24,7 @@ function createFullscreenButton() {
 function toggleFullscreen() {
     const holder = document.getElementById('map_canvas_holder');
     holder && holder.classList.remove('active');
+    document.body.style.overflow='auto';
     // google.maps.event.trigger(map, 'resize');
     // map.setOptions({'scrollwheel': !isFullsreen});
 }
