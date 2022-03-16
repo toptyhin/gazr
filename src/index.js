@@ -12,16 +12,14 @@ window.btnHandler = (el) => {
     
   };
 
-window.menuItemHandler = (el) => {
-    console.log(el);
+window.menuItemHandler = (el,menu = false) => {
     if (el.dataset.target) {
-        const target = document.getElementById(el.dataset.target);
+        const target = document.getElementById(el.dataset.target) || document.querySelector('.b24-form');
+        console.log(target)
         if (target) {
-            const rect = target.getBoundingClientRect();
-            toggleMenu();
-            console.log(rect.y);
+            menu && toggleMenu();
             window.scrollTo({
-                top: rect.y-60,
+                top:target.offsetTop - 60,
                 behavior: 'smooth'
             })
         
