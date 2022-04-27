@@ -1,6 +1,6 @@
 import './style.css';
 // import noUiSlider from 'nouislider';
-import gmapsInitialize from './map';
+import InMap from './map';
 // import * as echarts from 'echarts';
 
 window.toggleMenu = () => document.querySelector('.mobile-menu').classList.toggle('active');
@@ -39,7 +39,13 @@ window.showMap = () => {
     } else {
         holder.classList.add('active');
     }
-    gmapsInitialize();    
+    InMap({
+        apiKey: 'fd02c6b0-6362-49ca-bc38-9f074bf537f6',
+        parent: 'map_canvas',
+        showGaz: false,
+        destroy: true,
+        mapControlsArray: ["searchControl","routeButtonControl","zoomControl"]
+      });   
     setTimeout(()=>{
         holder.classList.add('active');
         document.body.style.overflow='hidden';
